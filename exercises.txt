@@ -1,0 +1,50 @@
+# Exercício 1
+# a)Exibir conteúdo sem a linha do cabeçalho
+## tail -n +2 echo.txt
+# b)Classificar pelo nome e sem linha do cabeçalho
+## tail -n +2 echo.txt|sort
+#c)Exibir só as linhas com John
+## grep 'John' echo.txt
+#d)Exibir linha que não tenham John
+## grep -v 'John' echo.txt
+#e)Exibir linhas com palavras de 4 letras começando com J
+##grep'\<J...\>' echo.txt
+#f)Ordenar linhas pela idade. -n to sort numerals, -t to identify the separator and -k to anchor
+## sort -n -t , -k 4 echo.txt 
+#g)
+#Pessoa mais jovem
+## tail -n +2 echo.txt|sort -n -t , -k 4|head -1
+#Pessoa mais velha
+## tail -n +2 echo.txt|sort -n -t , -k 4|tail -1
+#h)Listar as cidades. -d to identify the separator, -f to identify the column
+## tail -n +2 echo.txt|cut -d , -f 6|sort|uniq
+#i)Pessoa mais velha que mora em nova iorque
+## grep 'Nova Iorque' echo.txt|sort -n -t , -k 4|tail -n -1
+
+#Exercício 2
+#a)Número de linhas
+## wc -l echo.txt
+#b)Número de palavras
+## wc -w echo.txt
+#c)Número de bytes
+## wc -c echo.txt
+
+#Exercício 3
+# Criar um script de log
+#Always put in the beginning to identify the program to be used in the execution:
+## #! /bin/bash
+#Mostrar o diretório atual
+## echo "O diretório atual é $PWD"
+#Nome completo e idade
+## nome='Sarah Beatriz Gruetzmacher'
+## idade=26
+## echo "Nome completo: $nome"
+## echo "Idade: $idade"
+#Momento de execução do arquivo
+## data=$(date +"%d-%m-%y_%T")
+## echo "Execução realizada em $data"
+#Gravar alguma frase
+## echo 'Até a próxima.'
+#After saving use command
+##  chmod +x log.sh 
+#to allow it to be executed
