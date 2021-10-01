@@ -1,15 +1,18 @@
 #! /bin/bash
 
-echo "O diretório atual é: $PWD"
-
-nome='Sarah Beatriz Gruetzmacher'
-idade=26
-
-echo "Nome completo: $nome"
-
-echo "Idade: $idade"
-
-data=$(date +"%d-%m-%y_%T")
-echo "Execução realizada em $data"
-
-echo 'Até a próxima.'
+#Diretório atual
+PWD=$PWD
+#Nome completo e idade
+NOME='Sarah Beatriz Gruetzmacher'
+IDADE=26
+#Momento de execução do arquivo
+DATA=$(date +"%d-%m-%y_%T")
+#Gravar alguma frase
+FRASE='Até a próxima.'
+#Criar arquivo de log
+FILE=log_file.txt
+echo "Sou a $NOME e tenho $IDADE" >> $FILE
+echo "Arquivo salvo no diretório $PWD" >> $FILE
+echo "Data do acesso: $DATA" >> $FILE
+echo "$FRASE" >> $FILE
+echo "=======================================" >> $FILE
